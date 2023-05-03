@@ -1,4 +1,12 @@
 const inquirer = require('inquirer')
+const fs = require('fs')
+
+class SVG {
+    constructor() {
+        this.shapeElement = ''
+        
+    }
+}
 
 inquirer.prompt([
     {
@@ -23,3 +31,5 @@ inquirer.prompt([
         name: 'text-color'
     }
 ])
+.then((response) =>
+fs.writeFile())
