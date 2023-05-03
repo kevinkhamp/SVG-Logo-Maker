@@ -1,10 +1,20 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
+const {Circle, Square, Triangle} = require('./lib/shape.js')
 
 class SVG {
     constructor() {
         this.shapeElement = ''
-        
+        this.textElement = ''
+    }
+    render() {
+        return `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200"/>`
+    }
+    setText(text,color){
+        return `<text xmlns="http://www.w3.org/2000/svg" x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
+    }
+    setShape(shape) {
+        this.shapeElement = shape.render()
     }
 }
 
